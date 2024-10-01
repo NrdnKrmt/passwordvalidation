@@ -1,5 +1,5 @@
 public class Main {
-    public static void main(String[] args) {
-        System.out.println("Hello world!");
+    public static boolean hasEightCharacters(String password) {
+        return password.length() > 7;
     }
 }

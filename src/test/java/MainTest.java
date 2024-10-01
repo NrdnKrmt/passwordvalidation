@@ -10,7 +10,7 @@ public class MainTest {
         String password = "password";
 
         //WHEN
-        boolean actual = hasEightCharacters(password);
+        boolean actual = Main.hasEightCharacters(password);
 
         //THEN
         assertTrue(actual);
