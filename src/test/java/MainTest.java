@@ -164,4 +164,18 @@ public class MainTest {
         //THEN
         assertTrue(actual);
     }
+
+    //being common
+    @Test
+    @DisplayName("Common password")
+    public void isCommon_when_Password1_expect_True() {
+        //GIVEN
+        String password = "Password1";
+
+        //WHEN
+        boolean actual = Main.hasUppercaseAndLowercase(password);
+
+        //THEN
+        assertTrue(actual);
+    }
 }
