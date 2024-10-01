@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class MainTest {
 
+    //at least 8 characters
     @Test
     @DisplayName("Exactly 8 characters")
    public void hasEightCharactersTest_when_password_expect_True() {
@@ -47,7 +48,7 @@ public class MainTest {
 
     @Test
     @DisplayName("0 characters")
-    public void hasEightCharactersTest_when___expect_True() {
+    public void hasEightCharactersTest_when___expect_False() {
         //GIVEN
         String password = "";
 
@@ -58,6 +59,7 @@ public class MainTest {
         assertFalse(actual);
     }
 
+    //at least one digit
     @Test
     @DisplayName("No digits")
     public void hasDigitsTest_when_password_expect_False() {
@@ -69,5 +71,57 @@ public class MainTest {
 
         //THEN
         assertFalse(actual);
+    }
+
+    @Test
+    @DisplayName("Exactly one digit")
+    public void hasDigitsTest_when_passw0rd_expect_True() {
+        //GIVEN
+        String password = "passw0rd";
+
+        //WHEN
+        boolean actual = Main.hasDigits(password);
+
+        //THEN
+        assertTrue(actual);
+    }
+
+    @Test
+    @DisplayName("digitchain")
+    public void hasDigitsTest_when_p455word_expect_True() {
+        //GIVEN
+        String password = "p455word";
+
+        //WHEN
+        boolean actual = Main.hasDigits(password);
+
+        //THEN
+        assertTrue(actual);
+    }
+
+    @Test
+    @DisplayName("separated digits")
+    public void hasDigitsTest_when_p4ssw0rd_expect_True() {
+        //GIVEN
+        String password = "p4ssw0rd";
+
+        //WHEN
+        boolean actual = Main.hasDigits(password);
+
+        //THEN
+        assertTrue(actual);
+    }
+
+    @Test
+    @DisplayName("only digits")
+    public void hasDigitsTest_when_455012_expect_True() {
+        //GIVEN
+        String password = "455012";
+
+        //WHEN
+        boolean actual = Main.hasDigits(password);
+
+        //THEN
+        assertTrue(actual);
     }
 }
