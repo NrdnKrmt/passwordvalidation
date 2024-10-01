@@ -173,7 +173,7 @@ public class MainTest {
         String password = "Password1";
 
         //WHEN
-        boolean actual = Main.hasUppercaseAndLowercase(password);
+        boolean actual = Main.isCommon(password);
 
         //THEN
         assertTrue(actual);
