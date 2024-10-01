@@ -167,7 +167,7 @@ public class MainTest {
 
     //being common
     @Test
-    @DisplayName("Common password")
+    @DisplayName("Common")
     public void isCommon_when_Password1_expect_True() {
         //GIVEN
         String password = "Password1";
@@ -177,5 +177,44 @@ public class MainTest {
 
         //THEN
         assertTrue(actual);
+    }
+
+    @Test
+    @DisplayName("lowercase of common")
+    public void isCommon_when_password1_expect_False() {
+        //GIVEN
+        String password = "password1";
+
+        //WHEN
+        boolean actual = Main.isCommon(password);
+
+        //THEN
+        assertFalse(actual);
+    }
+
+    @Test
+    @DisplayName("different number of common")
+    public void isCommon_when_password2_expect_False() {
+        //GIVEN
+        String password = "password2";
+
+        //WHEN
+        boolean actual = Main.isCommon(password);
+
+        //THEN
+        assertFalse(actual);
+    }
+
+    @Test
+    @DisplayName("uncommon")
+    public void isCommon_when_Flooooooooooorian_expect_False() {
+        //GIVEN
+        String password = "Flooooooooooorian";
+
+        //WHEN
+        boolean actual = Main.isCommon(password);
+
+        //THEN
+        assertFalse(actual);
     }
 }
