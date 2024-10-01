@@ -57,4 +57,17 @@ public class MainTest {
         //THEN
         assertFalse(actual);
     }
+
+    @Test
+    @DisplayName("No digits")
+    public void hasDigitsTest_when_password_expect_False() {
+        //GIVEN
+        String password = "password";
+
+        //WHEN
+        boolean actual = Main.hasDigits(password);
+
+        //THEN
+        assertFalse(actual);
+    }
 }
