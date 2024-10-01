@@ -138,4 +138,30 @@ public class MainTest {
         //THEN
         assertFalse(actual);
     }
+
+    @Test
+    @DisplayName("only uppercase")
+    public void hasUppercaseAndLowercase_when_PASSWORD_expect_False() {
+        //GIVEN
+        String password = "PASSWORD";
+
+        //WHEN
+        boolean actual = Main.hasUppercaseAndLowercase(password);
+
+        //THEN
+        assertFalse(actual);
+    }
+
+    @Test
+    @DisplayName("upper and lowercase")
+    public void hasUppercaseAndLowercase_when_PasswoRd_expect_True() {
+        //GIVEN
+        String password = "PasswoRd";
+
+        //WHEN
+        boolean actual = Main.hasUppercaseAndLowercase(password);
+
+        //THEN
+        assertTrue(actual);
+    }
 }
